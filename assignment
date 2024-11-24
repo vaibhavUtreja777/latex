@@ -1,0 +1,284 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} % For page layout
+\usepackage{hyperref} % For hypertext links
+\usepackage{graphicx} % For including images
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{amsmath} % For advanced math formatting
+\usepackage{amssymb} % For symbols
+
+\begin{document}
+
+
+\section*{1.Questions and Answers}
+
+\renewcommand{\labelenumi}{\Roman{enumi}.}  % Change to Roman numerals
+
+\begin{enumerate}
+    \item \textbf{What is LaTeX?} \\
+    \textbf{Answer:} \\
+    LaTeX is a typesetting system widely used for producing technical and scientific documentation. It provides features for typesetting complex mathematical formulas, creating professional-looking documents, and managing references, indexes, and bibliographies efficiently.
+
+    \item \textbf{What do you mean by hypertext link? Write a command to insert a hypertext link in LaTeX.} \\
+    \textbf{Answer:} \\
+    A hypertext link in LaTeX refers to a clickable link that can direct the reader to a URL, a section of the document, or another document. To create a hypertext link, use the \texttt{hyperref} package and the \texttt{\textbackslash href} command:
+    \begin{verbatim}
+    \usepackage{hyperref}
+    \href{https://example.com}{Click Here}
+    \end{verbatim}
+    This creates a link labeled "Click Here" that directs to \texttt{https://example.com}.
+
+    \item \textbf{Write the command to insert an image in LaTeX.} \\
+    \textbf{Answer:} \\
+    To insert an image, use the \texttt{graphicx} package and the \texttt{\textbackslash includegraphics} command:
+    \begin{verbatim}
+    \usepackage{graphicx}
+    \includegraphics[width=\textwidth]{image_filename}
+    \end{verbatim}
+    Replace \texttt{image\_filename} with the path to your image file.
+
+    \item \textbf{What is the difference between \texttt{\textbackslash hfill} and \texttt{\textbackslash vfill} commands?} \\
+    \textbf{Answer:} \\
+    \begin{itemize}
+        \item \texttt{\textbackslash hfill}: Inserts horizontal space that stretches across the line. It is used for aligning content horizontally.
+        \item \texttt{\textbackslash vfill}: Inserts vertical space that stretches to fill the page. It is used for aligning content vertically.
+    \end{itemize}
+
+    \item \textbf{What is the role of the geometry package?} \\
+    \textbf{Answer:} \\
+    The \texttt{geometry} package in LaTeX is used to customize the layout of the document, such as setting margins, paper size, and page orientation. For example:
+    \begin{verbatim}
+    \usepackage[a4paper, margin=1in]{geometry}
+    \end{verbatim}
+    This sets the page size to A4 with 1-inch margins.
+
+    \item \textbf{What does \texttt{\textbackslash noindent} command do in LaTeX?} \\
+    \textbf{Answer:} \\
+    The \texttt{\textbackslash noindent} command prevents LaTeX from indenting the paragraph that follows it. Example:
+    \begin{verbatim}
+    \noindent This paragraph will not be indented.
+    \end{verbatim}
+
+    \item \textbf{Write the syntax for generating an index for a document in LaTeX. Illustrate with an example.} \\
+    \textbf{Answer:} \\
+    To create an index in LaTeX, use the \texttt{makeidx} package and follow these steps:
+    \begin{enumerate}
+        \item Include the package:
+        \begin{verbatim}
+        \usepackage{makeidx}
+        \makeindex
+        \end{verbatim}
+
+        \item Add entries for indexing using \texttt{\textbackslash index\{\}}:
+        \begin{verbatim}
+        This is an \index{example} example of indexing.
+        \end{verbatim}
+
+        \item Add the command to print the index at the end of the document:
+        \begin{verbatim}
+        \printindex
+        \end{verbatim}
+
+        \item Compile the document using the \texttt{makeindex} tool to generate the index.
+    \end{enumerate}
+    \textbf{Complete Example:}
+    \begin{verbatim}
+    \documentclass{article}
+    \usepackage{makeidx}
+    \makeindex
+
+    \begin{document}
+    This document includes an \index{example} example of an index.
+
+    \printindex
+    \end{document}
+    \end{verbatim}
+\end{enumerate}
+
+
+
+
+\section*{2.Explanation of Basic Structure of LaTeX Document}
+
+A basic LaTeX document consists of the following components:
+
+\begin{itemize}
+    \item \textbf{Document Class}: This defines the type of document (e.g., article, book, report).
+    \item \textbf{Preamble}: The part before \texttt{\textbackslash begin\{document\}} where packages and settings are defined to modify the document’s behavior and formatting.
+    \item \textbf{Document Body}: The main content of the document, placed between \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}}.
+\end{itemize}
+
+The \texttt{\textbackslash documentclass} command specifies the type of document (article, book, etc.), and you can include packages in the preamble to enhance features like math formatting, images, or tables. The \texttt{\textbackslash title}, \texttt{\textbackslash author}, and \texttt{\textbackslash date} commands allow you to customize the document's title page.
+
+\subsection*{Example of Basic LaTeX Document}
+
+Below is an example of a simple LaTeX document:
+
+\begin{verbatim}
+\documentclass{article}  % Specifies the document class
+
+\usepackage{amsmath}     % Example of a package for enhanced math formatting
+
+\title{Introduction to LaTeX}  % Document title
+\author{Your Name}            % Author name
+\date{\today}                 % Date of creation
+
+\begin{document}      % Start of document body
+
+\maketitle           % Generates title, author, and date based on the above information
+
+\section{Introduction}  % First section of the document
+This is an example of a basic LaTeX document. LaTeX is a typesetting system that is widely used for creating technical and scientific documents. 
+
+\section{Math Example}  % Second section
+One of the features of LaTeX is its ability to easily handle complex mathematical equations. For example, the quadratic formula is written as:
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+
+\end{document}  % End of document body
+\end{verbatim}
+
+\subsection*{Explanation of the Example}
+
+\begin{itemize}
+    \item \texttt{\textbackslash documentclass\{article\}}: Specifies the type of document (in this case, an article).
+    \item \texttt{\textbackslash usepackage\{amsmath\}}: Includes the \texttt{amsmath} package, which allows the use of advanced math formatting.
+    \item \texttt{\textbackslash title\{Introduction to LaTeX\}}: Defines the title of the document.
+    \item \texttt{\textbackslash author\{Your Name\}}: Specifies the author of the document.
+    \item \texttt{\textbackslash date\{\textbackslash today\}}: Automatically sets the date to the day of compilation.
+    \item \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}}: Marks the start and end of the content of the document.
+    \item \texttt{\textbackslash maketitle}: Generates the title section with the title, author, and date.
+    \item \texttt{\textbackslash section\{Introduction\}}: Creates a section titled "Introduction".
+    
+\end{itemize}
+
+
+
+\begin{enumerate}
+    \item[(a)] \textbf{Write the command to produce:}
+    \[
+    \delta_{ij} = 
+    \begin{cases} 
+    0 & \text{if } i \neq j \\ 
+    1 & \text{if } i = j 
+    \end{cases}
+    \]
+    
+   
+
+    \item[(b)] \textbf{Write the command for:}
+    ASDFJ]
+    \textbf{Answer:} \\
+    The command to produce the above equation and solution is:
+    
+    
+    The solution of which is:
+    \[
+    y = A J_\nu(x) + B Y_\nu(x),
+    \]
+    \[
+    y = AJ_\nu(x) + BJ_{-\nu}(x), \quad \text{if } \nu \text{ is non-integer.}
+    \]
+    
+    if\[\nu \]is non-integer.
+    
+    \section*{5.Subplot with Two Images}
+
+\begin{figure}[ht]
+    \centering
+    % First image
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/arsd_college.jpg} 
+        \caption{First Image}
+        \label{fig:first}
+    \end{subfigure}
+    \hfill
+    % Second image
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/University_of_delhi_logo.png} 
+        \caption{Second Image}
+        \label{fig:second}
+    \end{subfigure}
+    \caption{Subplot layout of two images.}
+    \label{fig:subplot}
+\end{figure}
+\clearpage
+\section*{4. Tables}
+    \begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row height
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{List of Topper Students}} \\ \hline
+    \textbf{Stream} & \textbf{Student Name} & \textbf{Position} & \textbf{Percentage} \\ \hline
+    B.Sc (Hons) Maths & A & First & 99 \\ \hline
+    B.Sc (Hons) Maths & B & Second & 98 \\ \hline
+    B.Sc (Hons) Maths & C & Third & 97.5 \\ \hline
+    B.Sc (Hons) Maths & D & Fourth & 97 \\ \hline
+    \end{tabular}
+    \caption{Table of Topper Students}
+    \label{tab:topper_students}
+    \end{table}
+
+
+    \begin{center}
+    \textbf{Distribution of Students by Courses and Classes}
+\end{center}
+
+
+\vspace{1cm} % Adds some vertical space between the two tables
+
+\begin{center}
+    \textbf{Summary of Total Students}
+\end{center}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{} & \multicolumn{4}{c|}{Number of students} & \multirow{2}{*}{Total} \\ 
+\cline{3-6}
+\multicolumn{2}{|c|}{} & B.Sc (H) & B.Sc (P) & B.A (H) & B.A (P) & \\
+\hline
+\multirow{2}{*}{Class} & II & 15 & 17 & 18 & 18 & 69 \\ 
+\cline{2-7}
+\multicolumn{1}{|c|}{} & III & 10 & 10 & 10 & 10 & 40 \\
+\hline
+\multicolumn{2}{|c|}{Total} & 25 & 27 & 28 & 28 & 109 \\
+\hline
+\end{tabular}
+\caption{Number of students in different courses}
+\label{tab:students}
+\end{table}
+
+
+
+
+
+
+    \section*{6.Overview of  LaTeX Commands}
+
+\subsection*{a. \textbackslash frontmatter}
+The command \verb|\frontmatter| is used to begin the front matter of a document, which includes sections like the title page and table of contents. It disables chapter numbering and uses lowercase Roman numerals for page numbers (\emph{i, ii, iii}). It is typically used in book-style documents.
+
+\subsection*{b. \textbackslash mainmatter}
+The \verb|\mainmatter| command is used to start the main content of a document. It enables chapter numbering and switches the page numbering to Arabic numerals (\emph{1, 2, 3}). It typically follows \verb|\frontmatter| in book-style documents.
+
+\subsection*{c. \textbackslash backmatter}
+The \verb|\backmatter| command marks the beginning of the back matter of a document. It is used in book-style documents and typically includes sections like appendices, bibliography, and index. It disables chapter numbering (if used previously) and continues the page numbering in Arabic numerals.
+
+\subsection*{d. \textbackslash include}
+The \verb|\include| command is used to insert the contents of another LaTeX file into the current document. It is typically used for large documents where different sections are split into separate files for better organization. Each file included with \verb|\include| starts on a new page.
+
+\subsection*{e. \textbackslash includeonly}
+The \verb|\includeonly| command is used to specify which files should be included during the compilation. It is useful when you are working with a large document and want to compile only a specific subset of files, speeding up the process.
+
+    
+
+\end{enumerate}
+
+\end{document}
