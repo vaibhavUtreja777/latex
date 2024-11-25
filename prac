@@ -1,0 +1,163 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makeidx} % For index creation
+\makeindex
+
+
+\title{Subplots}
+\author{vaibhav}
+\date{\today}
+\begin{document}
+
+\maketitle
+\section{Subplots}
+hello blah lorem
+
+\begin{figure}[ht]
+     \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{example-image} % Replace with your image file
+        \caption{Plot 1}
+        \label{fig:plot1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{example-image} % Replace with your image file
+        \caption{Plot 2}
+        \label{fig:plot2}
+    \end{subfigure}
+    \caption{Subplots of Graphical Data}
+    \label{fig:subplots}
+    
+\end{figure}
+\clearpage
+
+\section{Programming Languages Comparison}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Programming Languages Comparison}} \\ \hline
+    \textbf{Language} & \textbf{Ease of Learning} & \textbf{Applications} \\ \hline
+    Python & Easy & Data Science, Web Development \\ \hline
+    Java & Moderate & Enterprise Applications, Android Apps \\ \hline
+    C++ & Hard & Game Development, System Programming \\ \hline
+    \end{tabular}
+    \caption{Comparison of Programming Languages}
+    \label{tab:comparison}
+\end{table}
+
+\section{Table2}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c}
+    \hline
+    \multicolumn{3}{|c|}{\textit{{Programing language Comparison}}} \\ \hline
+    \textit{language} & \textbf{Ease of learning} & \textbf{Apllications} \\ \hline
+    Python & Easy & Data Science, Web Development \\ \hline
+    Java & Moderate & Enterprise Applications, Android Apps \\ \hline
+    C++ & Hard & Game Development, System Programming \\ \hline
+    
+    \end{tabular}
+    \caption{tavkekw3e}
+    \label{tab:my_label}
+\end{table}
+
+
+\clearpage
+
+
+\section{hyperffs and all}
+\section{Introduction}
+\label{sec:intro}
+This is the introduction section. It provides an overview of the document structure.
+
+\section{Referencing}
+In this section, we refer to the \hyperref[sec:intro]{Introduction Section} (Section~\ref{sec:intro}) to demonstrate cross-referencing and hyperlinks.
+
+\subsection{reference part 2 }
+In this blah blah refer to the \hyperref[sec:intro]{Intro to blah nlah}
+(section~\ref{sec:intro}
+
+as shown in a figure~\ref{fig:plot1}
+
+\clearpage
+
+\subsection{Introduction to LaTeX}
+LaTeX\index{LaTeX} is a powerful typesetting system used for creating high-quality documents. 
+
+\subsection{Using an Index}
+An index\index{Index} helps readers find important topics in a document. This document demonstrates how to create an index in LaTeX.
+
+\subsection{Document Structure}
+The document\index{Document} structure in LaTeX is divided into sections, subsections, and so on.
+
+\printindex
+\newpage
+
+
+
+\section{Images again}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.45\linewidth]{example-image}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{}
+        \label{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{}
+        \label{}
+    \end{subfigure}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\section{tABLE AGAIN}
+
+\begin{table}[!h]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \multicolumn{4}{|c|}{THE MAIN PART} \\ \hline
+    \textbf{stream} &\textbf{student name} &\textbf{position} &\textbf{percentage} \\ \hline
+    B.Sc (Hons) Maths & A & First & 99 \\ \hline
+    B.Sc (Hons) Maths & B & Second & 98 \\ \hline
+    B.Sc (Hons) Maths & C & Third & 97.5 \\ \hline
+    B.Sc (Hons) Maths & D & Fourth & 97 \\ \hline
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{2}{|c|}{} & \multicolumn{4}{|c|}{Number of students} & \multirow{2}{*}{total}\\
+    \cline{3-6} 
+         &  \\
+         & 
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}[]
+
+
+\end{document}
